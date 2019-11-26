@@ -1,5 +1,11 @@
 const states = require('./index');
 
+let statesAbbrList;
+
+beforeEach(() => {
+  statesAbbrList = states.getStatesAbbrList();
+});
+
 test('getStatesAbbrList', () => {
-  expect(states.getStatesAbbrList()).toBeDefined();
+  expect(statesAbbrList).toBeDefined();
 });

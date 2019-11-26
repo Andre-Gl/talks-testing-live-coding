@@ -55,3 +55,7 @@ Array [
   "WY",
 ]
 `;
+
+exports[`zipLookup should reject on invalid zip 1`] = `"Zip code is required"`;
+
+exports[`zipLookup should resolve correct zip 1`] = `"CA"`;

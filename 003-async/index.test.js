@@ -1,19 +1,14 @@
-// const mockData = {'TST' : 'Test'};
-// const mockStatesFn = jest.fn().mockImplementation(() => mockData);
-// const mockZipLookupFn = jest.fn().mockImplementation(() => mockData);
-//
-// jest.mock('./data', () => ({
-//   getStates: mockStatesFn,
-//   zipLookup:
-// }));
-
 const states = require('./index');
 
+let statesAbbrList;
+
+beforeEach(() => {
+  statesAbbrList = states.getStatesAbbrList();
+});
+
 test('getStatesAbbrList', () => {
-  expect(states.getStatesAbbrList().length).toBe(51);
-  // expect(states.getStatesAbbrList().length).toBe(1);
-  // expect(states.getStatesAbbrList()).toContain('TST');
-  // expect(mockFn).toHaveBeenCalled();
+  expect(statesAbbrList.length).toBe(51);
+  expect(statesAbbrList).toContain('CA');
 });
 
 describe('zipLookup', () => {

@@ -1,21 +1,27 @@
 const states = require('./index');
 
+let statesAbbrList;
+
+beforeEach(() => {
+  statesAbbrList = states.getStatesAbbrList();
+});
+
 test('getStatesAbbrList', () => {
   // Defined/Undefined
-  expect(states.getStatesAbbrList()).toBeDefined();
+  expect(statesAbbrList).toBeDefined();
   // Types
-  expect(states.getStatesAbbrList()).toEqual(expect.anything());
-  expect(states.getStatesAbbrList()).toEqual(expect.any(Array));
+  expect(statesAbbrList).toEqual(expect.anything());
+  expect(statesAbbrList).toEqual(expect.any(Array));
   // Numbers
-  expect(states.getStatesAbbrList().length).toBeGreaterThan(1);
-  expect(states.getStatesAbbrList().length).toEqual(51);
+  expect(statesAbbrList.length).toBeGreaterThan(1);
+  expect(statesAbbrList.length).toEqual(51);
   // Boolean
-  expect(states.getStatesAbbrList().includes('CA')).toBeTruthy();
-  expect(states.getStatesAbbrList().includes('AC')).toBeFalsy();
+  expect(statesAbbrList.includes('CA')).toBeTruthy();
+  expect(statesAbbrList.includes('AC')).toBeFalsy();
   // Strings
-  expect(states.getStatesAbbrList()[0]).toEqual('AZ');
-  expect(states.getStatesAbbrList()[0]).toMatch(/AZ/);
+  expect(statesAbbrList[0]).toEqual('AZ');
+  expect(statesAbbrList[0]).toMatch(/AZ/);
   // Arrays
-  expect(states.getStatesAbbrList()).toContain('CA');
-  expect(states.getStatesAbbrList()).not.toContain('AC');
+  expect(statesAbbrList).toContain('CA');
+  expect(statesAbbrList).not.toContain('AC');
 });

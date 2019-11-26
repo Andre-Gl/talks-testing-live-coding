@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getStatesAbbrList 1`] = `
+Array [
+  "TST",
+]
+`;
+
+exports[`zipLookup should reject on invalid zip 1`] = `"Error"`;
+
+exports[`zipLookup should resolve correct zip 1`] = `"TST"`;
