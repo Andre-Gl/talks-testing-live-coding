@@ -1,3 +1,5 @@
+const https = require('https');
+
 // States list
 const states = {
   AZ: 'Arizona',
@@ -54,9 +56,6 @@ const states = {
 };
 
 function zipLookup(zip) {
-  if (typeof zip === 'undefined' || !zip.length) {
-    return Promise.reject('Zip code is required');
-  }
   return new Promise((resolve, reject) => {
     https.get('https://ziptasticapi.com/' + zip, (resp) => {
       let data = '';

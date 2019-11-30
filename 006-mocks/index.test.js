@@ -1,14 +1,3 @@
-const mockStatesData = { 'TST' : 'Test' };
-const mockZipLookupData = { state: 'TST' };
-const mockGetStatesFn = jest.fn().mockImplementation(() => mockStatesData);
-
-const mockZipLookupFn = jest.fn().mockImplementation(() => Promise.resolve(mockZipLookupData));
-
-jest.mock('./data', () => ({
-  getStates: mockGetStatesFn,
-  zipLookup: mockZipLookupFn,
-}));
-
 const states = require('./index');
 
 let statesAbbrList;

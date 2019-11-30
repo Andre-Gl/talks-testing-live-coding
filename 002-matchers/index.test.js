@@ -10,6 +10,8 @@ test('getStatesAbbrList', () => {
   // Defined/Undefined
   expect(statesAbbrList).toBeDefined();
   // Types
+  expect(statesAbbrList).toBeInstanceOf(Array);
+  expect(statesAbbrList).toEqual(expect.anything());
   expect(statesAbbrList).toEqual(expect.anything());
   expect(statesAbbrList).toEqual(expect.any(Array));
   // Numbers
