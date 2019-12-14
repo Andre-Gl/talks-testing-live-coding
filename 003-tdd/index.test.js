@@ -8,20 +8,8 @@ beforeEach(() => {
 
 describe('getStatesAbbrList', () => {
   it('should return list of abbreviations', () => {
-    expect(statesAbbrList).toMatchSnapshot();
-  });
-});
-
-describe('zipLookup', () => {
-  it('should resolve correct zip', () => {
-    expect.assertions(1);
-    return expect(states.zipLookup('94085')).resolves.toMatchSnapshot();
-  });
-
-
-  it('should reject on invalid zip', () => {
-    expect.assertions(1);
-    return expect(states.zipLookup('')).rejects.toMatchSnapshot();
+    expect(statesAbbrList.length).toBe(51);
+    expect(statesAbbrList).toContain('CA');
   });
 });
 

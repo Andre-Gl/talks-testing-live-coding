@@ -1,19 +1,3 @@
-const mockStatesData = {
-  'TST0' : 'Test0',
-  'TST1' : 'Test1',
-  'TST2' : 'Test2',
-  'TST3' : 'Test3'
-};
-const mockZipLookupData = { state: 'TST' };
-const mockGetStatesFn = jest.fn().mockImplementation(() => mockStatesData);
-
-const mockZipLookupFn = jest.fn().mockImplementation(() => Promise.resolve(mockZipLookupData));
-
-jest.mock('./data', () => ({
-  getStates: mockGetStatesFn,
-  zipLookup: mockZipLookupFn,
-}));
-
 const states = require('./index');
 
 let statesAbbrList;
@@ -34,12 +18,12 @@ describe('getStatesTypeAhead', () => {
     expect(result).toMatchSnapshot();
   });
   it('should return array of states that starts with symbols', () => {
-    const typeAheadInput = 'Test0';
+    const typeAheadInput = 'Al';
     const result = states.getStatesTypeAhead(typeAheadInput);
     expect(result).toMatchSnapshot();
   });
   it('should return array of states that starts with symbols limitted to 3 matches', () => {
-    const typeAheadInput = 'Test';
+    const typeAheadInput = 'New';
     const result = states.getStatesTypeAhead(typeAheadInput);
     expect(result).toMatchSnapshot();
   });

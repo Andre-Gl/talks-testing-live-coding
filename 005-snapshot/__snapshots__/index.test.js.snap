@@ -56,6 +56,23 @@ Array [
 ]
 `;
 
+exports[`getStatesTypeAhead should return array of states that starts with symbols 1`] = `
+Array [
+  "Alabama",
+  "Alaska",
+]
+`;
+
+exports[`getStatesTypeAhead should return array of states that starts with symbols limitted to 3 matches 1`] = `
+Array [
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+]
+`;
+
+exports[`getStatesTypeAhead should return empty array when no input 1`] = `Array []`;
+
 exports[`zipLookup should reject on invalid zip 1`] = `"Zip code is required"`;
 
 exports[`zipLookup should resolve correct zip 1`] = `"CA"`;

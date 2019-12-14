@@ -1,4 +1,3 @@
-const https = require('https');
 
 // States list
 const states = {
@@ -55,33 +54,6 @@ const states = {
   WY: 'Wyoming'
 };
 
-function zipLookup(zip) {
-  return new Promise((resolve, reject) => {
-    https.get('https://ziptasticapi.com/' + zip, (resp) => {
-      let data = '';
-
-      // A chunk of data has been recieved.
-      resp.on('data', (chunk) => {
-        data += chunk;
-      });
-
-      // The whole response has been received. Print out the result.
-      resp.on('end', () => {
-        try {
-          const result = JSON.parse(data);
-          resolve(result);
-        } catch(err) {
-          reject(err);
-        }
-      });
-
-    }).on("error", (err) => {
-      reject(err);
-    });
-  });
-}
-
 module.exports = {
   getStates: () => states,
-  zipLookup: zipLookup,
 };
