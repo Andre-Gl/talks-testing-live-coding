@@ -6,9 +6,11 @@ beforeEach(() => {
   statesAbbrList = states.getStatesAbbrList();
 });
 
-test('getStatesAbbrList', () => {
-  expect(statesAbbrList.length).toBe(51);
-  expect(statesAbbrList).toContain('CA');
+describe('getStatesAbbrList', () => {
+  it('should return list of abbreviations', () => {
+    expect(statesAbbrList.length).toBe(51);
+    expect(statesAbbrList).toContain('CA');
+  });
 });
 
 describe('zipLookup', () => {
