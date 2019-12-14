@@ -6,6 +6,8 @@ beforeEach(() => {
   statesAbbrList = states.getStatesAbbrList();
 });
 
-test('getStatesAbbrList', () => {
-  expect(statesAbbrList).toBeDefined();
+describe('getStatesAbbrList', () => {
+  it('should return list of abbreviations', () => {
+    expect(statesAbbrList).toBeDefined();
+  });
 });

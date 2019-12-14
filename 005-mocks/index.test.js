@@ -17,8 +17,10 @@ beforeEach(() => {
   statesAbbrList = states.getStatesAbbrList();
 });
 
-test('getStatesAbbrList', () => {
-  expect(statesAbbrList).toMatchSnapshot();
+describe('getStatesAbbrList', () => {
+  it('should return list of abbreviations', () => {
+    expect(statesAbbrList).toMatchSnapshot();
+  });
 });
 
 describe('zipLookup', () => {

@@ -6,8 +6,10 @@ beforeEach(() => {
   statesAbbrList = states.getStatesAbbrList();
 });
 
-test('getStatesAbbrList', () => {
-  expect(statesAbbrList).toMatchSnapshot();
+describe('getStatesAbbrList', () => {
+  it('should return list of abbreviations', () => {
+    expect(statesAbbrList).toMatchSnapshot();
+  });
 });
 
 describe('zipLookup', () => {
@@ -36,7 +38,7 @@ describe('getStatesTypeAhead', () => {
     expect(result).toBeInstanceOf(Array);
     expect(result).toEqual(typeAheadResult);
   });
-  it('should limit results to 3 matches', () => {
+  it('should return array of states that starts with symbols limitted to 3 matches', () => {
     const typeAheadInput = 'New';
     const typeAheadResult = ['New Hampshire', 'New Jersey', 'New Mexico'];
     const result = states.getStatesTypeAhead(typeAheadInput);

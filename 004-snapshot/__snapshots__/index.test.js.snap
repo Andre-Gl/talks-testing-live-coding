@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getStatesAbbrList 1`] = `
+exports[`getStatesAbbrList should return list of abbreviations 1`] = `
 Array [
   "AZ",
   "AL",
